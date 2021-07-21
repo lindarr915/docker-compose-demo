@@ -230,7 +230,7 @@ Resources:
 ```
 
 
-## 4 Using AWS Secret Manager for Database Password
+## 4. Using AWS Secret Manager for Database Password
 
 We are going to take advanage of AWS Secert Manager to store the password of MySQL database. You can also use Amazon RDS and store the password using AWS Secert Manager as well.
 

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  expressuploadamazons3:
+    x-aws-policies:
+      - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+    image: darrenlin915/sa-demo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000            
+➜  docker context create ecs --local-simulation ecsLocal
