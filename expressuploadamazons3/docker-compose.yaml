@@ -11,5 +11,4 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 3000:3000            
-➜  docker context create ecs --local-simulation ecsLocal
+      - 3000:3000
