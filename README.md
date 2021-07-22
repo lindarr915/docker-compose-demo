@@ -228,7 +228,6 @@ Resources:
     Type: AWS::ServiceDiscovery::PrivateDnsNamespace
 ...
 ```
-![WordPress](/images/image-2021-05-20T153609.196.png)
 
 
 
