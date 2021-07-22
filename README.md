@@ -228,6 +228,8 @@ Resources:
     Type: AWS::ServiceDiscovery::PrivateDnsNamespace
 ...
 ```
+![WordPress](/images/image-2021-05-20T153609.196.png)
+
 
 
 ## 4. Using AWS Secret Manager for Database Password
@@ -336,27 +338,4 @@ WARNING services.secrets.mode: unsupported attribute
 
 - Please turn it down after complated. 
 
-
-## 5. Extras
-- When you run your application on ECS, the AWS SDK and retrieve API credentials at runtime from the metadata service. Running your application locally for testing or debug purposes can be difficult. For example, your task will access Amazon S3 with an IAM role. 
-- An option on context creation to set the ecs-local context is introduced to maintain application portability between local workstation and the AWS cloud provider.
-
-
-```
-➜  express-upload-amazon-s3 git:(master) ✗ cat docker-compose.yml 
-version: '3.4'
-
-services:
-  expressuploadamazons3:
-    x-aws-policies:
-      - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-    image: darrenlin915/sa-demo
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
-    ports:
-      - 3000:3000            
-➜  docker context create ecs --local-simulation ecsLocal
-```
+`docker -c myecs compose down`
