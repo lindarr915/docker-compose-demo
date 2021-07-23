@@ -7,12 +7,22 @@
 - If you are using MacBook with Apple Silicon (M1), the image building process can be more complex as it requires using `docker buildx build --platform linux/amd64,linux/arm64` 
 
 ### Linux
-1. Install Docker-CE and jq `sudo yum install docker jq -y`
+0. Create a Cloud 9 IDE instance with `m5.large` instance type
+1. Install Docker-CE and jq 
+
+```
+$ sudo yum install docker jq -y
+## Post Docker Installation
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+$ ln -s /path/to/existing/docker /directory/in/PATH/com.docker.cli
+```
 2. Install Compose Cloud Intergration 
 
 Installation:
 ```
 pushd /tmp
+curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 curl -LO https://github.com/docker/compose-cli/releases/download/v1.0.17/docker-linux-amd64
 chmod +x docker-linux-amd64
 sudo mv docker-linux-amd64 /usr/local/bin/docker
@@ -42,7 +52,9 @@ Client:
 ```
 pushd /tmp
 curl -LO https://github.com/docker/compose-cli/releases/download/v2.0.0-beta.6/docker-compose-linux-amd64
-mv docker-compose-linux-amd64 ~/.docker/cli-plugins/docker-compose
+chmod +x docker-compose-linux-amd64
+mkdir -p ~/.docker/cli-plugins/
+mv ./docker-compose-linux-amd64 ~/.docker/cli-plugins/docker-compose
 popd
 ```
 
@@ -52,7 +64,7 @@ popd
 admin:~/environment/ $ aws configure
 AWS Access Key ID [None]: 
 AWS Secret Access Key [None]: 
-Default region name [None]: us-west-2
+Default region name [None]: us-east-1
 ```
 
 5. Create ECS context 
