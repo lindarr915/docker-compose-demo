@@ -87,7 +87,7 @@ myecs               ecs
 - Get the Docker-Compose file for WordPress
 
 ```
-echo << EOF > docker-compose.yaml
+cat << EOF > docker-compose.yaml
 version: "3.9"
     
 services:
