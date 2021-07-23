@@ -17,15 +17,15 @@ $ sudo groupadd docker
 $ sudo usermod -aG docker $USER
 ```
 2. Install Compose Cloud Intergration 
-
 Installation:
+
 ```
 pushd /tmp
 curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 curl -LO https://github.com/docker/compose-cli/releases/download/v1.0.17/docker-linux-amd64
 chmod +x docker-linux-amd64
 sudo mv docker-linux-amd64 /usr/local/bin/docker
-ln -s  /usr/bin/docker /usr/local/bin/com.docker.cli
+sudo ln -s  /usr/bin/docker /usr/local/bin/com.docker.cli
 popd
 ```
 
